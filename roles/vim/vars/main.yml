@@ -2,10 +2,3 @@
 # vars file for vim
 vim_dir: "{{ ansible_env.HOME }}/.vim"
 vimrc: "{{ ansible_env.HOME }}/.vimrc"
-install_packages:
-  - vim
-  - git
-  - powerline
-  - fzf
-  - jq
-  - "{{ 'powerline-fonts' if ansible_facts.distribution == 'Archlinux' else 'fonts-powerline' }}"

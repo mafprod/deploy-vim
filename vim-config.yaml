@@ -4,6 +4,38 @@
   become: no
 
   tasks:
+    - name: Set packages if Archlinux
+      ansible.builtin.set_fact:
+        install_packages:
+          - vim
+          - git
+          - powerline
+          - fzf
+          - jq
+          - powerline-fonts
+      when: ansible_facts.distribution == 'Archlinux'
+
+    - name: Set packages if Debian or Ubuntu
+      ansible.builtin.set_fact:
+        install_packages:
+          - vim
+          - git
+          - powerline
+          - fzf
+          - jq
+          - fonts-powerline
+      when: ansible_facts.distribution == 'Debian' or ansible_facts.distribution == 'Ubuntu'
+
+    - name: Set packages if OSX
+      ansible.builtin.set_fact:
+        install_packages:
+          - vim
+          - git
+          - powerline-go
+          - fzf
+          - jq
+      when: ansible_facts.distribution == 'MacOSX'
+
     - name: Configure Vim using role
       ansible.builtin.import_role:
         name: vim
