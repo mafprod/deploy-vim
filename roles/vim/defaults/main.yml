@@ -1,0 +1,21 @@
+---
+# defaults file for vim
+plugins:
+  - name: vim-airline
+    url: https://github.com/vim-airline/vim-airline
+  - name: vim-airline-themes
+    url: https://github.com/vim-airline/vim-airline-themes
+  - name: vim-gitgutter
+    url: https://github.com/airblade/vim-gitgutter
+  - name: nerdtree
+    url: https://github.com/preservim/nerdtree
+  - name: fzf-vim
+    url: https://github.com/junegunn/fzf.vim
+  - name: tabular
+    url: https://github.com/godlygeek/tabular
+  - name: vim-markdown
+    url: https://github.com/preservim/vim-markdown
+  - name: vim-json
+    url: https://github.com/elzr/vim-json
+  - name: ansible-vim
+    url: https://github.com/pearofducks/ansible-vim

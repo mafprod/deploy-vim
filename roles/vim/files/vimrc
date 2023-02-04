@@ -1,0 +1,49 @@
+execute pathogen#infect()
+syntax on
+set ruler
+set tw=78
+set autoindent
+set expandtab
+set smarttab
+set shiftwidth=4
+set softtabstop=8
+set tabstop=8
+filetype plugin indent on
+
+colo default
+
+" Configuration vim Airline
+set laststatus=2
+
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
+let g:airline_theme='papercolor'
+
+" Configuration NERDTree
+map <C-]> :NERDTreeToggle<CR>
+
+" Configuration floaterm
+let g:floaterm_keymap_toggle = '<F12>'
+let g:floaterm_width = 0.9
+let g:floaterm_height = 0.9
+
+" Configuration Vim.FZF
+let g:fzf_preview_window = 'right:50%'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
+
+" Configuration vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
+" GitGutter statusline
+function! GitStatus()
+    let [a,m,r] = GitGutterGetHunkSummary()
+    return printf('+%d ~%d -%d', a, m, r)
+endfunction
+set statusline+=%{GitStatus()}
+set updatetime=100
+
+" Autocmd opties
+augroup mafprod_cmds
+    autocmd!
+    autocmd FileType json setlocal equalprg=jq\ .
+augroup END
