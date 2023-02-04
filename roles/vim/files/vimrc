@@ -41,9 +41,3 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 set updatetime=100
-
-" Autocmd opties
-augroup mafprod_cmds
-    autocmd!
-    autocmd FileType json setlocal equalprg=jq\ .
-augroup END
