@@ -1,4 +1,4 @@
-deploy-vim
+vim
 =========
 
 A deployer that installs vim and some indicated packages and configures it.
