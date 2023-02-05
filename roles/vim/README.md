@@ -12,4 +12,4 @@ plugins or configuration options if we want to add them later.
 License
 -------
 
-BSD
+BSD 3-Clause
