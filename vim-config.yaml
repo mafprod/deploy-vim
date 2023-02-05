@@ -1,9 +1,13 @@
 - name: Config Vim with plugins
   hosts: localhost
   gather_facts: yes
-  become: no
+  become: yes
 
   tasks:
+    - name: Set the become_user based on the OS we are on
+      ansible.builtin.set_fact:
+        become_user: "{{ ansible_user_id if ansible_facts.distribution == 'MacOSX' else 'root' }}"
+
     - name: Set packages if Archlinux
       ansible.builtin.set_fact:
         install_packages:
