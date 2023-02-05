@@ -4,8 +4,8 @@
   ansible.builtin.package:
     name: "{{ install_packages }}"
     state: present
-  become: yes
-  become_user: "{{ ansible_user if ansible_facts.distribution == 'MacOSX' else 'root' }}"
+  become: "{{ 'no' if ansible_facts.distribution == 'MacOSX' else 'yes' }}"
+  become_user: "{{ ansible_facts.env.USER if ansible_facts.distribution == 'MacOSX' else 'root' }}"
   tags:
     - install_packages
 
