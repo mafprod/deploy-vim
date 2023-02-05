@@ -1,4 +1,4 @@
-#deploy-vim
+# deploy-vim
 
 A set of playbooks and roles that can be used to install and configure vim.
 This way vim is installed and configured the same way on all my systems where
