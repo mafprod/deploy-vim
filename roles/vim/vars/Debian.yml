@@ -1,0 +1,16 @@
+---
+# Packages for Ubuntu
+pkg_list:
+  - vim
+  - git
+  - powerline
+  - fzf
+  - jq
+  - fonts-powerline
+  - python3-autopep8
+  - perltidy
+  - libtest-perl-critic-perl
+  - python3-pytest-pylint
+  - shellcheck
+  - yamllint
+  - ansible-lint

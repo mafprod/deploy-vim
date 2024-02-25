@@ -1,0 +1,10 @@
+---
+# Packages fro FreeBSD
+pkg_list:
+  - vim
+  - git
+  - powerline-fonts
+  - py39-powerline-status
+  - fzf
+  - jq
+  - py39-autopep8

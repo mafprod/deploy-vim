@@ -9,6 +9,7 @@ set shiftwidth=4
 set softtabstop=8
 set tabstop=8
 set conceallevel=2
+set mouse=""
 filetype plugin indent on
 
 colo default
@@ -42,3 +43,13 @@ function! GitStatus()
 endfunction
 set statusline+=%{GitStatus()}
 set updatetime=100
+
+" Perltidy as = command for perl files
+autocmd FileType perl setlocal equalprg=perltidy\ -st
+
+" ALE Configuration
+let g:ale_virtualtext_cursor = 'disabled'
+
+" Write file via sudo
+command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
+map <C-s> :W<CR>

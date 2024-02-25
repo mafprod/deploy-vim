@@ -1,0 +1,8 @@
+---
+# Packages for Alpine
+pkg_list:
+  - neovim
+  - git
+  - fzf
+  - jq
+  - py3-autopep8

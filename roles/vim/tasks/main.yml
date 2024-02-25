@@ -1,20 +1,23 @@
 ---
 # tasks file for vim
+- name: Load package list
+  ansible.builtin.include_vars:
+    file: "{{ ansible_facts.distribution }}.yml"
 - name: Install required packages
   ansible.builtin.package:
-    name: "{{ install_packages }}"
+    name: "{{ pkg_list }}"
     state: present
-  become: "{{ 'no' if ansible_facts.distribution == 'MacOSX' else 'yes' }}"
-  become_user: "{{ ansible_facts.env.USER if ansible_facts.distribution == 'MacOSX' else 'root' }}"
-  tags:
-    - install_packages
+    use: "{{ 'kewlfft.aur.aur' if ansible_facts.distribution == 'Archlinux'
+      else 'auto' }}"
+  become: "{{ pkg_become }}"
+  become_user: "{{ pkg_become_user }}"
 
 - name: Ensure .vim/{autoload,bundle} directory exists
   ansible.builtin.file:
     path: "{{ item }}"
     state: directory
-    recurse: no
-    mode: 0750
+    recurse: false
+    mode: "0750"
   loop:
     - "{{ vim_dir }}"
     - "{{ vim_dir }}/autoload"
@@ -24,18 +27,26 @@
   ansible.builtin.get_url:
     dest: "{{ vim_dir }}/autoload/pathogen.vim"
     url: https://tpo.pe/pathogen.vim
+    mode: "0750"
 
 - name: Deploy plugins
   ansible.builtin.git:
     dest: "{{ vim_dir }}/bundle/{{ item.name }}"
     repo: "{{ item.url }}"
-    clone: yes
-    recursive: no
-  loop: "{{ plugins }}"
+    clone: true
+    recursive: false
+  loop: "{{ vim_plugins }}"
 
 - name: Ensure .vimrc config in place
   ansible.builtin.copy:
     src: vimrc
     dest: "{{ vimrc }}"
-    backup: yes
-    mode: 0640
+    backup: true
+    mode: "0640"
+
+- name: Ensure .perltidy config in place
+  ansible.builtin.copy:
+    src: perltidyrc
+    dest: "{{ perltidyrc }}"
+    backup: true
+    mode: "0640"
