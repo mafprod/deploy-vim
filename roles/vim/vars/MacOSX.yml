@@ -1,0 +1,14 @@
+---
+# Packages for MacOSX
+pkg_list:
+  - vim
+  - git
+  - powerline-go
+  - fzf
+  - jq
+  - autopep8
+  - perltidy
+  - prettier
+  - markdownlint-cli
+  - pylint
+  - shellcheck

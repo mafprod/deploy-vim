@@ -1,7 +1,8 @@
-- hosts: all
+---
+- hosts: localhost
   tasks:
     - debug:
-      var: ansible_facts.distribution
+        var: ansible_facts.distribution
 
     - debug:
-      var: ansible_facts.pkg_mgr
+        var: ansible_facts.pkg_mgr

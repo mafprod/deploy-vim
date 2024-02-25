@@ -1,0 +1,6 @@
+---
+# Packages for Almalinux
+pkg_list:
+  - vim
+  - git
+  - jq

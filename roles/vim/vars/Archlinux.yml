@@ -1,0 +1,18 @@
+---
+# Packages for Archlinux
+pkg_list:
+  - fakeroot
+  - vim
+  - git
+  - powerline
+  - fzf
+  - jq
+  - powerline-fonts
+  - autopep8
+  - perl-test-perltidy
+  - perl-perl-critic
+  - prettier
+  - python-pylint
+  - shellcheck-bin
+  - yamllint
+  - markdownlint-cli
