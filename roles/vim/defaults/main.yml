@@ -28,4 +28,4 @@ vim_plugins:
   - name: luacheck
     url: https://github.com/mpeterv/luacheck
   - name: fugitive.vim
-    url: https://tpope.io/vim/fugitive
+    url: https://tpope.io/vim/fugitive.git
