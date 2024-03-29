@@ -29,10 +29,17 @@ for your distribution to that.
 Run the playbook as the user that you want to install the settings for, since
 the files need to be installed in the users home folder. For the distribution
 where elevated priviliges are needed, this is set via the playbook. Normally
-you should be able to run the playbook with `ansible-playbook deploy-vim`. If
-you get a message that you are not authorized, run as `ansible-playbook -K
-deploy-vim` and enter your sudo password when prompted. That way the packages
-should get installed properly.
+you should be able to run the playbook with `ansible-playbook deploy-vim.yml`.
+If you get a message that you are not authorized, run as `ansible-playbook -K
+deploy-vim.yml` and enter your sudo password when prompted. That way the
+packages should get installed properly.
+
+For a quick one-time install, you can also use the `ansible-pull` command.
+Using `ansible-pull --purge -U https://github.com/mafprod/deploy-vim.git
+deploy-vim.yaml`, the repo is pulled to the `~/.ansible/pull` directory, the
+`deploy-vim.yml` playbook is executed and after the run, the pulled repository
+is deleted. As with the previous method, the `-K` switch might need to be
+added if you get an error regarding permissions.
 
 ## License
 
