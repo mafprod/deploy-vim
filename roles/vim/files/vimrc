@@ -1,3 +1,5 @@
+let mapleader = '-'
+let maplocalleader = '\'
 execute pathogen#infect()
 syntax on
 set ruler
