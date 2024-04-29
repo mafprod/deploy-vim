@@ -55,3 +55,7 @@ let g:ale_virtualtext_cursor = 'disabled'
 " Write file via sudo
 command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
 map <C-s> :W<CR>
+
+" Custom functions
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
