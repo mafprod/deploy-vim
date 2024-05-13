@@ -59,3 +59,13 @@ map <C-s> :W<CR>
 " Custom functions
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" Source if exists function
+function! SourceIfExists(file)
+    if filereadable(expand(a:file))
+        exe 'source' a:file
+    endif
+endfunction
+
+" Source local_options if they exist
+call SourceIfExists("~/.vim/local_options.vim")
