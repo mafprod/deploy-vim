@@ -57,10 +57,10 @@ command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
 map <C-s> :W<CR>
 
 " Custom functions
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
-nnoremap <leader>el :vsplit ~/.vim/local_options.vim<cr>
-nnoremap <leader>sl :source ~/.vim/local_options.vim<cr>
+nnoremap <localleader>ev :vsplit $MYVIMRC<cr>
+nnoremap <localleader>sv :source $MYVIMRC<cr>
+nnoremap <localleader>el :vsplit ~/.vim/local_options.vim<cr>
+nnoremap <localleader>sl :source ~/.vim/local_options.vim<cr>
 
 " Source if exists function
 function! SourceIfExists(file)
