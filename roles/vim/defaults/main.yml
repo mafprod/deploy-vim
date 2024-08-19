@@ -29,3 +29,5 @@ vim_plugins:
     url: https://github.com/mpeterv/luacheck
   - name: fugitive.vim
     url: https://tpope.io/vim/fugitive.git
+  - name: nnn.vim
+    url: https://github.com/mcchrish/nnn.vim
