@@ -12,3 +12,4 @@ pkg_list:
   - markdownlint-cli
   - pylint
   - shellcheck
+  - nnn

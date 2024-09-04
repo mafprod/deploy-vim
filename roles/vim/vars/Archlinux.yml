@@ -16,3 +16,4 @@ pkg_list:
   - shellcheck-bin
   - yamllint
   - markdownlint-cli
+  - nnn
