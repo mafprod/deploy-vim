@@ -22,6 +22,7 @@
     - "{{ vim_dir }}"
     - "{{ vim_dir }}/autoload"
     - "{{ vim_dir }}/bundle"
+    - "{{ nvimrc }}"
 
 - name: Ensure Pathogen is in place
   ansible.builtin.get_url:
@@ -41,6 +42,13 @@
   ansible.builtin.copy:
     src: vimrc
     dest: "{{ vimrc }}"
+    backup: true
+    mode: "0640"
+
+- name: Ensure neovim's init.vim config in place
+  ansible.builtin.copy:
+    src: init.vim
+    dest: "{{ nvimrc }}"
     backup: true
     mode: "0640"
 
