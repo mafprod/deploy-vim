@@ -2,6 +2,7 @@
 # Packages for MacOSX
 pkg_list:
   - vim
+  - neovim
   - git
   - powerline-go
   - fzf

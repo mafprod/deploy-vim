@@ -3,6 +3,7 @@
 pkg_list:
   - fakeroot
   - vim
+  - neovim
   - git
   - powerline
   - fzf

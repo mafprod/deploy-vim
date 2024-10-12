@@ -2,6 +2,7 @@
 # Packages for Debian and Ubuntu
 pkg_list:
   - vim
+  - neovim
   - git
   - powerline
   - fzf
