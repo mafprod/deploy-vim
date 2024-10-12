@@ -6,6 +6,7 @@ pkg_list:
   - git
   - powerline
   - fzf
+  - nnn
   - jq
   - fonts-powerline
   - python3-autopep8

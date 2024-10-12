@@ -7,5 +7,6 @@ pkg_list:
   - powerline-fonts
   - py39-powerline-status
   - fzf
+  - nnn
   - jq
   - py39-autopep8

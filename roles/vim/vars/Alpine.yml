@@ -4,5 +4,6 @@ pkg_list:
   - neovim
   - git
   - fzf
+  - nnn
   - jq
   - py3-autopep8
