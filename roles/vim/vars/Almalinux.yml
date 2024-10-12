@@ -2,5 +2,6 @@
 # Packages for Almalinux
 pkg_list:
   - vim
+  - neovim
   - git
   - jq

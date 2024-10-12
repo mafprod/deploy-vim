@@ -2,6 +2,7 @@
 # Packages fro FreeBSD
 pkg_list:
   - vim
+  - neovim
   - git
   - powerline-fonts
   - py39-powerline-status
