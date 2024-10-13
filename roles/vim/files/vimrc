@@ -71,3 +71,7 @@ endfunction
 
 " Source local_options if they exist
 call SourceIfExists("~/.vim/local_options.vim")
+
+" Add custom mapping for NnnExplorer
+" Set custom mappings
+nnoremap <silent> <localleader>n :NnnExplorer<CR>
