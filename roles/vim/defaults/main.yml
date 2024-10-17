@@ -33,3 +33,5 @@ vim_plugins:
     url: https://github.com/mcchrish/nnn.vim
   - name: catppuccin
     url: https://github.com/catppuccin/nvim
+  - name: glow.nvim
+    url: https://github.com/ellisonleao/glow.nvim
