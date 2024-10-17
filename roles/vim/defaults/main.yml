@@ -31,5 +31,9 @@ vim_plugins:
     url: https://tpope.io/vim/fugitive.git
   - name: nnn.vim
     url: https://github.com/mcchrish/nnn.vim
+
+neovim_plugins:
+  - name: glow
+    url: https://github.com/ellisonleao/glow.nvim
   - name: catppuccin
     url: https://github.com/catppuccin/nvim

@@ -3,6 +3,7 @@
 vim_dir: "{{ ansible_env.HOME }}/.vim"
 vimrc: "{{ ansible_env.HOME }}/.vimrc"
 nvimrc: "{{ ansible_env.HOME }}/.config/nvim"
+nvimplug: "{{ ansible_env.HOME }}/.config/nvim/pack"
 perltidyrc: "{{ ansible_env.HOME }}/.perltidyrc"
 pkg_become: >-
   {% if ansible_facts.distribution == 'Archlinux' %}

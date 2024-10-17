@@ -30,13 +30,21 @@
     url: https://tpo.pe/pathogen.vim
     mode: "0750"
 
-- name: Deploy plugins
+- name: Deploy vim plugins
   ansible.builtin.git:
     dest: "{{ vim_dir }}/bundle/{{ item.name }}"
     repo: "{{ item.url }}"
     clone: true
     recursive: false
   loop: "{{ vim_plugins }}"
+
+- name: Deploy neovim plugins
+  ansible.builtin.git:
+    dest: "{{ nvimplug }}/{{ item.name }}/start/{{ item.name }}"
+    repo: "{{ item.url }}"
+    clone: true
+    recursive: false
+  loop: "{{ neovim_plugins }}"
 
 - name: Ensure .vimrc config in place
   ansible.builtin.copy:
