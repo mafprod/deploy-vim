@@ -2,7 +2,13 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
-colorscheme catppuccin-latte " catppuccin-latte catppuccin-frappe catppuccin-macchiato catppuccin-mocha
-set guicursor = "n-v-i-c:block-Cursor"
+" Set the cursor to a block in all modes
+set guicursor =
 
+" Setup catppuccin to get the colors right
+lua vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
+lua require("catppuccin").setup()
+lua vim.cmd [[colorscheme catppuccin]]
+
+" Configure the glow plugin
 lua require('glow').setup({ style = "light", width = 80, })
