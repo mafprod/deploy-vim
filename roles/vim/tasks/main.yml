@@ -46,6 +46,12 @@
     recursive: false
   loop: "{{ neovim_plugins }}"
 
+- name: Create virtual pyhton environment for neovim
+  ansible.builtin.pip:
+    virtualenv: "{{ nvimrc }}/python"
+    virtualenv_command: "python3 -m venv"
+    name: "pynvim"
+
 - name: Ensure .vimrc config in place
   ansible.builtin.copy:
     src: vimrc
