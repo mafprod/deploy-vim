@@ -49,7 +49,7 @@
 - name: Create virtual pyhton environment for neovim
   ansible.builtin.pip:
     virtualenv: "{{ nvimrc }}/python"
-    virtualenv_command: "pyenv"
+    virtualenv_command: "-m venv"
     name: "pynvim"
 
 - name: Ensure .vimrc config in place
