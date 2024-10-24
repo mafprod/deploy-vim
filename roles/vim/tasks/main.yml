@@ -45,7 +45,7 @@
 - name: Ensure the plugin bootstrapper is in place
   ansible.builtin.copy:
     src: initialize.vim
-    dest: "{{ vimdir }}"
+    dest: "{{ vim_dir }}"
     backup: true
     mode: "0640"
 
