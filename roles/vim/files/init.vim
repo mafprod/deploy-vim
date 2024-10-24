@@ -2,13 +2,12 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
+" Configure the oxocarbon theme
+lua vim.opt.background = "light"
+lua vim.cmd("colorscheme oxocarbon")
+
 " Set the cursor to a block in all modes
 set guicursor =
-
-" Setup catppuccin to get the colors right
-lua vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
-lua require("catppuccin").setup()
-lua vim.cmd [[colorscheme catppuccin]]
 
 " Configure the glow plugin
 lua require('glow').setup({ style = "light", width = 80, })
