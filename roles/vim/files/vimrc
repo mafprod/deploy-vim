@@ -25,7 +25,6 @@ call plug#end()
 
 let mapleader = '-'
 let maplocalleader = '\'
-execute pathogen#infect()
 syntax on
 set ruler
 set tw=78
