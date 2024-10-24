@@ -62,7 +62,3 @@
     dest: "{{ perltidyrc }}"
     backup: true
     mode: "0640"
-
-- name: Install plugins before we start using (n)vim
-  ansible.builtin.command: vim -u initialize.vim +'PlugUpgrade' +qa
-  register: plug_output
