@@ -61,6 +61,10 @@ nnoremap <localleader>ev :vsplit $MYVIMRC<cr>
 nnoremap <localleader>sv :source $MYVIMRC<cr>
 nnoremap <localleader>el :vsplit ~/.vim/local_options.vim<cr>
 nnoremap <localleader>sl :source ~/.vim/local_options.vim<cr>
+nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
+nnoremap <localleader>" a"<esc>`<i"<esc>`>
+nnoremap <localleader>' a'<esc>`<i'<esc>`>
 
 " Source if exists function
 function! SourceIfExists(file)
