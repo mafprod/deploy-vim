@@ -42,6 +42,13 @@
     backup: true
     mode: "0640"
 
+- name: Ensure the plugin bootstrapper is in place
+  ansible.builtin.copy:
+    src: initialize.vim
+    dest: "{{ vimdir }}"
+    backup: true
+    mode: "0640"
+
 - name: Ensure neovim's init.vim config in place
   ansible.builtin.copy:
     src: init.vim
@@ -55,3 +62,7 @@
     dest: "{{ perltidyrc }}"
     backup: true
     mode: "0640"
+
+- name: Install plugins before we start using (n)vim
+  ansible.builtin.command: vim -u initialize.vim +'PlugUpgrade' +qa
+  register: plug_output
