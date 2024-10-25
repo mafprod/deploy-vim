@@ -27,6 +27,14 @@ call plug#end()
 
 if $VIM_BOOTSTRAP == "true" | finish | endif
 
+if has('lua') && v:version >= 900
+    " Configure catppuccin on recent neovim
+    colorscheme catppuccin
+    lua require("catppuccin").setup({flavour = "latte"})
+else
+    colo default
+endif
+
 let mapleader = '-'
 let maplocalleader = '\'
 syntax on
