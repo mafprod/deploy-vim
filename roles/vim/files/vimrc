@@ -25,6 +25,8 @@ Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
 
 call plug#end()
 
+if exists($VIM_BOOTSTRAP) | finish | endif
+
 let mapleader = '-'
 let maplocalleader = '\'
 syntax on
