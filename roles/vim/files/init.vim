@@ -9,7 +9,7 @@ if v:lua.vim.version().major == 0 && v:lua.vim.version().minor < 8
     lua vim.cmd("colorscheme oxocarbon")
 endif
 elseif
-    colorscheme catppuccin-latte
+    colorscheme catppuccin
 endif
 
 " Set the cursor to a block in all modes
