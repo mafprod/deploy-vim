@@ -2,9 +2,15 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 source ~/.vimrc
 
-" Configure the oxocarbon theme
-lua vim.opt.background = "light"
-lua vim.cmd("colorscheme oxocarbon")
+" Configure neovim theme
+if v:lua.vim.version().major == 0 && v:lua.vim.version().minor < 8
+    " Configure the oxocarbon theme
+    lua vim.opt.background = "light"
+    lua vim.cmd("colorscheme oxocarbon")
+endif
+elseif
+    colorscheme catppuccin-latte
+endif
 
 " Set the cursor to a block in all modes
 set guicursor =
