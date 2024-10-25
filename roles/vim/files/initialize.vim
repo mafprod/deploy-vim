@@ -20,6 +20,7 @@ Plug 'mpeterv/luacheck'
 Plug 'https://tpope.io/vim/fugitive.git' 
 Plug 'mcchrish/nnn.vim' 
 Plug 'nyoom-engineering/oxocarbon.nvim', { 'as': 'oxocarbon' }
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
 
 call plug#end()
