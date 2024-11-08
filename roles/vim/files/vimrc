@@ -22,6 +22,7 @@ Plug 'mcchrish/nnn.vim'
 Plug 'nyoom-engineering/oxocarbon.nvim', { 'as': 'oxocarbon' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
+Plug 'jamessan/vim-gnupg'
 
 call plug#end()
 
