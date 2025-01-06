@@ -11,7 +11,7 @@ this into account.
 
 On MacOSX, you need to have brew installed, since that will be used as the
 package manager. Some of the packages on Archlinux are in the AUR repository.
-The `kewlfft.aur` ansible galaxy collection is used. This can use all of the
+The `kewlfft.aur` ansible galaxy collection is used. This can use all the
 AUR package managers and falls back to `makepkg` if none of them are
 installed. That is also why we install `fakeroot` as the first package on
 Archlinux, since that will be needed to build and install the AUR packages.
@@ -28,7 +28,7 @@ for your distribution to that.
 
 Run the playbook as the user that you want to install the settings for, since
 the files need to be installed in the users home folder. For the distribution
-where elevated priviliges are needed, this is set via the playbook. Normally
+where elevated privileges are needed, this is set via the playbook. Normally
 you should be able to run the playbook with `ansible-playbook deploy-vim.yml`.
 If you get a message that you are not authorized, run as `ansible-playbook -K
 deploy-vim.yml` and enter your sudo password when prompted. That way the
