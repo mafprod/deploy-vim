@@ -9,8 +9,8 @@ if v:lua.vim.version().major == 0 && v:lua.vim.version().minor < 8
     lua vim.cmd("colorscheme oxocarbon")
 else
     " Configure catppuccin on recent neovim
-    colorscheme catppuccin
     lua require("catppuccin").setup({flavour = "latte"})
+    colorscheme catppuccin
 endif
 
 " Set the cursor to a block in all modes
