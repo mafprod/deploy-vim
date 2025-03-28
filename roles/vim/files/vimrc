@@ -3,6 +3,9 @@ call plug#begin(expand('~/.vim/plugged'))
 
 "*****************************************************************************
 "" Plug install packages
+"" Bootstrap with:
+""
+"" VIM_BOOTSTRAP=true vim -u ~/.vimrc +'PlugInstall --sync' +qa
 "*****************************************************************************
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -30,8 +33,8 @@ if $VIM_BOOTSTRAP == "true" | finish | endif
 
 if has('lua') && v:version >= 900
     " Configure catppuccin on recent neovim
-    colorscheme catppuccin
     lua require("catppuccin").setup({flavour = "latte"})
+    colorscheme catppuccin
 else
     colo default
 endif
