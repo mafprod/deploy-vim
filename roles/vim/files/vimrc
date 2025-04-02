@@ -1,11 +1,35 @@
+"*****************************************************************************
+"" Vim-Plug core
+"*****************************************************************************
+let vimplug_exists=expand('~/.vim/autoload/plug.vim')
+if has('win32')&&!has('win64')
+  let curl_exists=expand('C:\Windows\Sysnative\curl.exe')
+else
+  let curl_exists=expand('curl')
+endif
+
+if !filereadable(vimplug_exists)
+  if !executable(curl_exists)
+    echoerr "You have to install curl or first install vim-plug yourself!"
+    execute "q!"
+  endif
+  echo "Installing Vim-Plug..."
+  echo ""
+  silent exec "!"curl_exists" -fLo " . shellescape(vimplug_exists) . " --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+  let g:not_finish_vimplug = "yes"
+
+  autocmd VimEnter * PlugInstall
+endif
+
 " Required:
 call plug#begin(expand('~/.vim/plugged'))
 
 "*****************************************************************************
 "" Plug install packages
-"" Bootstrap with:
 ""
-"" VIM_BOOTSTRAP=true vim -u ~/.vimrc +'PlugInstall --sync' +qa
+"" Run below to bootstrap vim from vimrc:
+""
+"" `VIM_BOOTSTRAP=true vim --not-a-term -u ~/.vimrc +'PlugInstall --sync' +qa`
 "*****************************************************************************
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -105,6 +129,9 @@ nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>bi'<esc>lel
 nnoremap <localleader>" a"<esc>`<i"<esc>`>
 nnoremap <localleader>' a'<esc>`<i'<esc>`>
+nnoremap <localleader>vv :vsplit b<cr>
+nnoremap <localleader>hh :split b<cr>
+nnoremap <localleader>] :cd %:p:h <bar> bo split <bar> term<cr>
 
 " Source if exists function
 function! SourceIfExists(file)
@@ -116,5 +143,9 @@ endfunction
 " Source local_options if they exist
 call SourceIfExists("~/.vim/local_options.vim")
 
+" nnn.vim settings
+"
+" use the same n³ session within a vim session (remembers location)
+let g:nnn#session = 'global'
 " Add custom mapping for NnnExplorer
 nnoremap <silent> <localleader>n :NnnExplorer<CR>
