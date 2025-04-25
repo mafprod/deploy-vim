@@ -2,6 +2,7 @@
 # Packages for Alpine
 pkg_list:
   - neovim
+  - neovim-doc
   - git
   - fzf
   - nnn

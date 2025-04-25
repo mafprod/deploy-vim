@@ -29,12 +29,6 @@
     url: "https://raw.githubusercontent.com/junegunn/vim-plug/refs/heads/master/plug.vim"
     mode: "0750"
 
-- name: Create virtual pyhton environment for neovim
-  ansible.builtin.pip:
-    virtualenv: "{{ nvimrc }}/python"
-    virtualenv_command: "python3 -m venv"
-    name: "pynvim"
-
 - name: Ensure .vimrc config in place
   ansible.builtin.copy:
     src: vimrc

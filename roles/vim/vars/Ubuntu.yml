@@ -1,5 +1,5 @@
 ---
-# Packages for Debian and Ubuntu
+# Packages for Ubuntu
 pkg_list:
   - vim
   - neovim
