@@ -46,7 +46,6 @@ Plug 'dense-analysis/ale'
 Plug 'mpeterv/luacheck'
 Plug 'https://tpope.io/vim/fugitive.git'
 Plug 'mcchrish/nnn.vim'
-Plug 'nyoom-engineering/oxocarbon.nvim', { 'as': 'oxocarbon' }
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
 Plug 'jamessan/vim-gnupg'
@@ -60,7 +59,7 @@ if has('lua') && v:version >= 900
     lua require("catppuccin").setup({flavour = "latte"})
     colorscheme catppuccin
 else
-    colo default
+    colo zellner
 endif
 
 let mapleader = '-'
@@ -77,8 +76,6 @@ set tabstop=8
 set conceallevel=2
 set mouse=""
 filetype plugin indent on
-
-colo default
 
 " Configuration vim Airline
 set laststatus=2
