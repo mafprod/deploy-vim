@@ -1,6 +1,8 @@
 ---
 # Packages for Alpine
 pkg_list:
+  - vim
+  - vim-doc
   - neovim
   - neovim-doc
   - git
