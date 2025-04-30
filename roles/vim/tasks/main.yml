@@ -51,5 +51,5 @@
     mode: "0640"
 
 - name: Install the plugins via plug.vim
-  ansible.builtin.shell: VIM_BOOTSTRAP=true vim --not-a-term -u ~/.vimrc +'PlugInstall --sync' +qa
+  ansible.builtin.shell: VIM_BOOTSTRAP=true vim -u ~/.vimrc +'PlugInstall --sync' +qa
   register: plug_output
