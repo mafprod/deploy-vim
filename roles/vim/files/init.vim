@@ -15,3 +15,5 @@ if v:lua.vim.version().major >= 0 && v:lua.vim.version().minor >= 8
 else
     colo zellner
 endif
+
+lua require('render-markdown').setup({ code = { style = 'full' } })

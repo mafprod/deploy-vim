@@ -49,6 +49,9 @@ Plug 'mcchrish/nnn.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
 Plug 'jamessan/vim-gnupg'
+Plug 'nvim-mini/mini.nvim', { 'branch': 'stable' }
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 call plug#end()
 
@@ -81,8 +84,13 @@ filetype plugin indent on
 set laststatus=2
 
 let g:airline#extensions#tabline#enabled=1
+let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:airline_powerline_fonts=1
-let g:airline_theme='papercolor'
+let g:airline_theme='catppuccin'
+call g:airline#parts#define_accent('mode', 'none')
+call g:airline#parts#define_accent('linenr', 'none')
+call g:airline#parts#define_accent('maxlinenr', 'none')
+call g:airline#parts#define_accent('colnr', 'none')
 
 " Configuration NERDTree
 map <C-]> :NERDTreeToggle<CR>
@@ -112,6 +120,9 @@ autocmd FileType perl setlocal equalprg=perltidy\ -st
 
 " ALE Configuration
 let g:ale_virtualtext_cursor = 'disabled'
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-d> <Plug>(ale_go_to_definition)
 
 " Write file via sudo
 command W silent execute 'write !sudo tee ' . shellescape(@%, 1) . ' >/dev/null'
