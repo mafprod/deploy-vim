@@ -2,12 +2,12 @@
 # tasks file for vim
 - name: Load package list
   ansible.builtin.include_vars:
-    file: "{{ ansible_facts.distribution }}.yml"
+    file: "{{ ansible_facts['distribution'] }}.yml"
 - name: Install required packages
   ansible.builtin.package:
     name: "{{ pkg_list }}"
     state: present
-    use: "{{ 'kewlfft.aur.aur' if ansible_facts.distribution == 'Archlinux'
+    use: "{{ 'kewlfft.aur.aur' if ansible_facts['distribution'] == 'Archlinux'
       else 'auto' }}"
   become: "{{ pkg_become }}"
   become_user: "{{ pkg_become_user }}"
