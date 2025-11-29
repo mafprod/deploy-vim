@@ -2,7 +2,13 @@
 - hosts: localhost
   tasks:
     - debug:
-        var: ansible_facts.distribution
+        var: ansible_facts['distribution']
 
     - debug:
         var: ansible_facts.pkg_mgr
+
+    - debug:
+        var: ansible_facts['env']['HOME']
+
+    - debug:
+        var: ansible_facts['env']['USER']
