@@ -51,6 +51,11 @@ Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
 Plug 'jamessan/vim-gnupg'
 Plug 'nvim-mini/mini.nvim', { 'branch': 'stable' }
 Plug 'nvim-tree/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'tree-sitter/tree-sitter-html'
+Plug 'latex-lsp/tree-sitter-latex'
+Plug 'tree-sitter-grammars/tree-sitter-markdown'
+Plug 'tree-sitter-grammars/tree-sitter-yaml'
 Plug 'MeanderingProgrammer/render-markdown.nvim'
 
 call plug#end()
