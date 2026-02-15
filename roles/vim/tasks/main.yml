@@ -11,6 +11,7 @@
       else 'auto' }}"
   become: "{{ pkg_become }}"
   become_user: "{{ pkg_become_user }}"
+  becom_method: "{{ pkg_become_method }}"
 
 - name: Ensure .vim directory exists
   ansible.builtin.file:

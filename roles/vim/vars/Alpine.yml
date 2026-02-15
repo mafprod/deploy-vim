@@ -10,3 +10,5 @@ pkg_list:
   - nnn
   - jq
   - py3-autopep8
+
+pkg_become_method: 'doas'
