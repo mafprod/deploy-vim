@@ -47,6 +47,7 @@ Plug 'mpeterv/luacheck'
 Plug 'https://tpope.io/vim/fugitive.git'
 Plug 'mcchrish/nnn.vim'
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'catppuccin/vim', { 'as': 'catvim' }
 Plug 'ellisonleao/glow.nvim', { 'as': 'glow' }
 Plug 'jamessan/vim-gnupg'
 Plug 'nvim-mini/mini.nvim', { 'branch': 'stable' }
@@ -62,13 +63,7 @@ call plug#end()
 
 if $VIM_BOOTSTRAP == "true" | finish | endif
 
-if has('lua') && v:version >= 900
-    " Configure catppuccin on recent neovim
-    lua require("catppuccin").setup({flavour = "latte"})
-    colorscheme catppuccin
-else
-    colo zellner
-endif
+colo default
 
 let mapleader = '-'
 let maplocalleader = '\'
@@ -91,7 +86,7 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#formatter='unique_tail_improved'
 let g:airline_powerline_fonts=1
-let g:airline_theme='catppuccin'
+let g:airline_theme='papercolor'
 call g:airline#parts#define_accent('mode', 'none')
 call g:airline#parts#define_accent('linenr', 'none')
 call g:airline#parts#define_accent('maxlinenr', 'none')

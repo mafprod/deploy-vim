@@ -17,3 +17,5 @@ else
 endif
 
 lua require('render-markdown').setup({ code = { style = 'full' } })
+
+let g:airline_theme='catppuccin_latte'
